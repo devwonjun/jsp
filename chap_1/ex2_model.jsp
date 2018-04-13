@@ -25,7 +25,7 @@
         address 파라미터 : <%= userAddress %> <br/>
         pet 선택 항목 : <%= userPet.length %> <br/> <!-- pet 배열 값 카운트 수 -->
         <% 
-            if (userPet.length > 0) {
+            if (userPet.length > 0) { // pet 값이 있다면...
         %>
 
                 pet 파라미터 : 
