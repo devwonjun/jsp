@@ -11,6 +11,11 @@
     
     String[]  userPet = request.getParameterValues("pet"); // 체크박스, 라디오 버튼 등의 값을 배열로 담기 
 
+    Enumeration enums = request.getParameterNames(); // 폼 전송되는 Element 이름을 가져오기
+
+    Map parameterMap = request.getParameterMap();
+    String[] mapParameter =(String[])parameterMap.get("name");
+
     // 파라미터 변수명으로 선언 끝
 
 %>
@@ -37,6 +42,27 @@
                 %>
         <% 
             } // enf if 
+        %>
+        <br/>
+        파라미터 이름 :
+        <% 
+            while(enums.hasMoreElements()) { 
+                String name = (String)enums.nextElement();
+                out.print(name+", ");
+            }
+        %>
+        <br/>
+        파라미터 Map 겟수 : <%=mapParameter.length %>
+        <% 
+            if(mapParameter !=null) {
+        %>
+                <br/>
+                <% for (int i=0; i< mapParameter.length; i++){
+                    out.print("name : "+mapParameter[i]);
+                }
+                %>
+        <%
+            }
         %>
     </body>
 </html>
