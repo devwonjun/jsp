@@ -1,5 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.io.*" %>
+<%@ page import="java.net.URL" %>
+
 <%
     request.setCharacterEncoding("UTF-8");
 %>
@@ -24,9 +26,14 @@
 
 
             try {
+                 URL url  = application.getResource(resourcePath);
+
+                 //out.print(url);
+                 //break;
                 //fr = new FileReader("C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps\\jsp\\chap_5\\message\\notice\\notice.txt");
-                fr = new BufferedReader(new InputStreamReader(new FileInputStream("C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps\\jsp\\chap_5\\message\\notice\\notice.txt"),"UTF8"));  // 절대 경로 
-                fr = new BufferedReader(new InputStreamReader( application.getResourceAsStream(resourcePath)  ,"UTF8"));  // 상대 경로                 
+                //fr = new BufferedReader(new InputStreamReader(new FileInputStream("C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps\\jsp\\chap_5\\message\\notice\\notice.txt"),"UTF8"));  // 절대 경로 
+                //fr = new BufferedReader(new InputStreamReader( application.getResourceAsStream(resourcePath)  ,"UTF8"));  // 상대 경로                 
+                fr = new BufferedReader(new InputStreamReader( url.openStream()  ,"UTF8"));  // 상대 경로                 
                 
                 while( (len = fr.read(buff)) !=-1 ) {
                     out.print( new String(buff,0 , len));
