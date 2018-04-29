@@ -4723,6 +4723,24 @@
         <param-name> debugLevel</param-name>
         <param-value>7</param-value>
     </context-param>
+
+
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>http://localhost:8080/jsp/chap_5/ex8_error_call_404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/chap_5/ex8_error_call_500.jsp</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>java.lang.NullPointerException</ecception-type>
+        <location>/char_5/ex8_error_call_null.jsp</location>
+    <error-page>    
     <!-- 5장 예제 샘플 코드 추가  -->
+
+
 
 </web-app>
