@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="euc-kr"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+  <display-name>9장 예제</display-name>
+  <description>
+     9장의 예제 소스 코드 및 실행 코드
+  </description>
+  
+  <session-config>
+    <session-timeout>1</session-timeout>
+  </session-config>
+</web-app>
